@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace Proyecto_Web_II.Models
 {
@@ -20,6 +21,15 @@ namespace Proyecto_Web_II.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Cuenta> Cuentas { get; set; }
+        public DbSet<Contactos> Contactos{ get; set; }
+        public DbSet<Reunion> Reunion { get; set; }
+
+        //public override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Reunion>().HasRequired(x=> x.)
+        //}
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -29,8 +39,6 @@ namespace Proyecto_Web_II.Models
         {
             return new ApplicationDbContext();
         }
-
-        public System.Data.Entity.DbSet<Proyecto_Web_II.Models.Cuenta> Cuentas { get; set; }
         
     }
 }

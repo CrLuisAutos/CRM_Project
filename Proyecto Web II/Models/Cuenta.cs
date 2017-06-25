@@ -19,6 +19,7 @@ namespace Proyecto_Web_II.Models
 
         [Required(ErrorMessage = "Requerido")]
         [DisplayName("Cédula Jurídica")]
+        [RegularExpression(@"^\(?([1-9]{1})\)?[-. ]?([0-9]{4})?[-. ]?([0-9]{4})$", ErrorMessage = "Número de Teléfono invalido")]
         public int Cedula_Juridica { get; set; }
 
         [Required(ErrorMessage = "Requerido")]
@@ -32,10 +33,14 @@ namespace Proyecto_Web_II.Models
 
         [Required(ErrorMessage = "Requerido")]
         [DisplayName("Número de Teléfono")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{4})\)?[-. ]?([0-9]{4})$", ErrorMessage = "Número de Teléfono invalido")]
         public int Numero_de_telefono { get; set; }
 
         [Required(ErrorMessage = "Requerido")]
         public SectorList Sector { get; set; }
+        public virtual IEnumerable<Contactos> Contacto{ get; set; }
+        public virtual IEnumerable<Reunion> Reunion{ get; set; }
 
     }
     public enum SectorList
