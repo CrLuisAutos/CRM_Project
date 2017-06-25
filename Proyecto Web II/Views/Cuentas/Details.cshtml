@@ -1,0 +1,66 @@
+﻿@model Proyecto_Web_II.Models.Cuenta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cuenta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cedula_Juridica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cedula_Juridica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pagina_Web)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pagina_Web)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion_Fisica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion_Fisica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero_de_telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero_de_telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sector)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
